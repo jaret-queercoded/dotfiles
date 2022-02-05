@@ -14,6 +14,20 @@ filetype plugin on
 " Color scheme
 set termguicolors
 colorscheme dracula
+" Macos transparent background with iterm
+" Also a function to toggel it if it get distracting
+hi Normal guibg=NONE ctermbg=NONE                    
+let t:is_transparent = 1                     
+function! Toggle_transparent_background()                      
+  if t:is_transparent == 1                   
+    hi Normal guibg=#282a36 ctermbg=black
+    let t:is_transparent = 0
+  else
+    hi Normal guibg=NONE ctermbg=NONE                    
+    let t:is_transparent = 1                        
+  endif                    
+endfunction               
+nnoremap <C-x><C-t> :call Toggle_transparent_background()<CR>
 
 " 4 spaces for tabs
 set tabstop=4
