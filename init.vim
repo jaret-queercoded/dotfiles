@@ -10,6 +10,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'rking/ag.vim'
+Plug 'ericcurtin/CurtineIncSw.vim'
 call plug#end()
 
 filetype plugin on
@@ -55,6 +56,9 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 " fzf
 nnoremap ; :Files<CR>
+
+" CurtineIncSw
+  map <A-o> :call CurtineIncSw()<CR>
 
 " COC
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
